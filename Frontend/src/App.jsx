@@ -5,10 +5,7 @@ const App = () => {
   return (
     <div>
       <Navbar />
-      
       <Navroutes />
-      
-      
     </div>
   )
 }

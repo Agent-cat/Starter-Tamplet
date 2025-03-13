@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Signin = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -9,7 +11,12 @@ const Signin = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your signin logic here
+    if (formData.email === 'mandalavishnuvardhan07@gmail.com' || formData.password === 'Vishnu@2005') {
+      navigate('/dashboard');
+    }
+    else {
+      navigate('/signup');
+    }
   };
 
   const handleChange = (e) => {
@@ -24,7 +31,7 @@ const Signin = () => {
       <div className="max-w-md w-full space-y-8">
         <div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-black">
-            Sign in to your account
+            Sign in
           </h2>
           <p className="mt-2 text-center text-sm text-gray-800">
             Or{' '}
@@ -69,21 +76,12 @@ const Signin = () => {
 
           <div className="flex items-center justify-between">
             <div className="flex items-center">
-              <input
-                id="remember-me"
-                name="remember-me"
-                type="checkbox"
-                className="h-4 w-4 text-black focus:ring-black border-gray-400 rounded"
-              />
-              <label htmlFor="remember-me" className="ml-2 block text-sm text-black">
-                Remember me
-              </label>
+
+
             </div>
 
             <div className="text-sm">
-              <a href="#" className="font-medium text-black hover:text-gray-700">
-                Forgot your password?
-              </a>
+
             </div>
           </div>
 

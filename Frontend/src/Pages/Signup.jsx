@@ -11,7 +11,7 @@ const Signup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your signup logic here
+
   };
 
   const handleChange = (e) => {
