@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaBars, FaTimes, FaUser } from 'react-icons/fa';
 import { Navconstants } from '../constants/Navconstant';
-
+import codechefLogo from '../assets/codechef.svg';
 const Navbar = ({ user, onLogout }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [showUserMenu, setShowUserMenu] = useState(false);
@@ -25,7 +25,7 @@ const Navbar = ({ user, onLogout }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <NavLink to="/" className="flex items-center text-xl font-bold">
-            Vishnu
+            <img src={codechefLogo} alt="logo" /> CodeChef
           </NavLink>
 
           <div className="hidden md:flex items-center space-x-4">
@@ -89,7 +89,7 @@ const Navbar = ({ user, onLogout }) => {
             )}
           </div>
 
-          {/* Mobile menu button */}
+
           <div className="md:hidden flex items-center">
             <button
               onClick={toggleMenu}
