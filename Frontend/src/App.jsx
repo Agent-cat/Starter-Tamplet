@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
-import AppRoutes from './routes';
+
 import { useNavigate } from 'react-router-dom';
+import Navroutes from './routes/Navroutes';
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -28,7 +29,7 @@ const App = () => {
   return (
     <div className="App">
       <Navbar user={user} onLogout={handleLogout} />
-      <AppRoutes onLogin={handleLogin} />
+      <Navroutes onLogin={handleLogin} />
     </div>
   );
 };

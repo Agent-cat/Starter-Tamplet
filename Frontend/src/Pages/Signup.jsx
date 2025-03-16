@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const SignUp = () => {
+const SignUp = ({ onLogin }) => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
@@ -23,7 +23,7 @@ const SignUp = () => {
     setError('');
 
     try {
-      const response = await fetch('http://localhost:4000/api/users/signup', {
+      const response = await fetch('http://localhost:3000/api/users/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -40,8 +40,9 @@ const SignUp = () => {
       // Store the token and user data
       localStorage.setItem('token', data.token);
       localStorage.setItem('user', JSON.stringify(data.user));
+      onLogin(data.user);
 
-      // Redirect to dashboard
+
       navigate('/dashboard');
     } catch (err) {
       setError(err.message);

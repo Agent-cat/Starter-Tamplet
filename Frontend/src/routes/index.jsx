@@ -6,7 +6,8 @@ const AppRoutes = ({ onLogin }) => {
     return (
         <Routes>
             <Route path="/signin" element={<SignIn onLogin={onLogin} />} />
-            <Route path="/signup" element={<SignUp />} />
+            <Route path="/signup" element={<SignUp onLogin={onLogin} />} />
+            {/* ... other routes ... */}
         </Routes>
     );
 };
