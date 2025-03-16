@@ -8,7 +8,6 @@ const App = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Check for user data in localStorage on component mount
     const storedUser = localStorage.getItem('user');
     if (storedUser) {
       setUser(JSON.parse(storedUser));
@@ -20,7 +19,6 @@ const App = () => {
   };
 
   const handleLogout = () => {
-    // Clear user data and token from localStorage
     localStorage.removeItem('user');
     localStorage.removeItem('token');
     setUser(null);
