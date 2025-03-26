@@ -29,7 +29,9 @@ const App = () => {
   return (
     <div className="App">
       <Navbar user={user} onLogout={handleLogout} />
-      <Navroutes onLogin={handleLogin} />
+      <div className="">
+        <Navroutes onLogin={handleLogin} />
+      </div>
     </div>
   );
 };
